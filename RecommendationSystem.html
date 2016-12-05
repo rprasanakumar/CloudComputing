@@ -10,30 +10,182 @@
     <link href="./stylesheets/stylesheet.css" rel="stylesheet">
 	  <script>
     $('body').scrollspy({ target: '#site-navbar' })
-	  g = new Dygraph(document.getElementById("graph"),
-                 // For possible data formats, see http://dygraphs.com/data.html
-                 // The x-values could also be dates, e.g. "2012/03/15"
-                 "Book,Jaccard,cosine,correlation\n" +
-                "743456335,	0.3,	0.4,	0.7\n"+
-"515128546,	-0.6,	-0.2,	0.4\n"+
-"385314388,	0.7,	0.9,	0.9\n"+
-"380792028,	0.6,	0.9,	0.9\n"+
-"312995423,	0.4,	1,	1\n"+
-"380762595,	1,	1,	1\n"+
-"553569910,	1,	1,	1\n"+
-"684818868,	0.6,	1,	1\n"+
-"006098824X,	0.3,	1,	1\n"+
-"044023722X,	-0.5,	1,	1\n"+
-"439136350,	-0.3,	0.5,	0.6\n"+
-"006098824X,	-0.2,	0.4,	0.9\n"+
-"385479565,	0.2,0.7,	0.9\n",
+	    <link rel="stylesheet" href="style.css" type="text/css">
+        <script src="../amcharts/amcharts.js" type="text/javascript"></script>
+        <script src="../amcharts/serial.js" type="text/javascript"></script>
 
-                 {
-                     // options go here. See http://dygraphs.com/options.html
-                     legend: 'always',
-                     animatedZooms: true,
-                     title: 'dygraphs chart template'
-                 });
+        <script>
+            var chart;
+            var graph;
+
+            var chartData = [
+                {
+                    "Book": "743456335",
+                    "Jaccard": 0.3
+					"Cosine":0.4
+					"Correlation":0.7
+
+                },
+                {
+                     "Book": "385314388
+",
+                    "Jaccard": -0.6
+
+					"Cosine":-0.2
+
+					"Correlation":0.4
+
+                },
+                {
+                     "Book": "380792028
+",
+                    "Jaccard": 0.6
+					"Cosine":0.9
+					"Correlation":0.9
+                },
+                {
+                     "Book": "312995423
+",
+                    "Jaccard": 0.2
+					"Cosine":1
+					"Correlation":1
+                },
+                {
+                     "Book": "380762595
+",
+                    "Jaccard": 1
+					"Cosine":1
+					"Correlation":1
+                },
+                {
+                    "Book": "553569910
+",
+                    "Jaccard": 1
+					"Cosine":1
+					"Correlation":1
+                },
+                {
+                    "Book": "684818868
+",
+                    "Jaccard": 0.6
+					"Cosine":1
+					"Correlation":1
+                },
+                {
+                    "Book": "006098824X
+",
+                    "Jaccard": 0.3	
+					"Cosine":1
+
+					"Correlation":1
+                },
+                {
+                     "Book": "044023722X
+",
+                    "Jaccard": -0.5
+
+					"Cosine":1
+
+					"Correlation":1
+
+                },
+                {
+                    "Book": "439136350
+",
+                    "Jaccard": -0.3
+
+					"Cosine":0.5
+
+					"Correlation":0.6
+
+                },
+                {
+                    "Book": "006098824X",
+                    "Jaccard": -0.2
+
+					"Cosine":0.4
+
+					"Correlation":0.9
+
+                },
+                {
+                     "Book": "385479565",
+                    "Jaccard": 0.2
+
+					"Cosine":0.7
+
+					"Correlation":0.9
+
+                }
+            ];
+
+
+            AmCharts.ready(function () {
+                // SERIAL CHART
+                chart = new AmCharts.AmSerialChart();
+
+                chart.dataProvider = chartData;
+                chart.marginLeft = 10;
+                chart.categoryField = "year";
+                chart.dataDateFormat = "YYYY";
+
+                // listen for "dataUpdated" event (fired when chart is inited) and call zoomChart method when it happens
+                chart.addListener("dataUpdated", zoomChart);
+
+                // AXES
+                // category
+                var categoryAxis = chart.categoryAxis;
+                categoryAxis.parseDates = true; // as our data is date-based, we set parseDates to true
+                categoryAxis.minPeriod = "YYYY"; // our data is yearly, so we set minPeriod to YYYY
+                categoryAxis.dashLength = 3;
+                categoryAxis.minorGridEnabled = true;
+                categoryAxis.minorGridAlpha = 0.1;
+
+                // value
+                var valueAxis = new AmCharts.ValueAxis();
+                valueAxis.axisAlpha = 0;
+                valueAxis.inside = true;
+                valueAxis.dashLength = 3;
+                chart.addValueAxis(valueAxis);
+
+                // GRAPH
+                graph = new AmCharts.AmGraph();
+                graph.type = "smoothedLine"; // this line makes the graph smoothed line.
+                graph.lineColor = "#d1655d";
+                graph.negativeLineColor = "#637bb6"; // this line makes the graph to change color when it drops below 0
+                graph.bullet = "round";
+                graph.bulletSize = 8;
+                graph.bulletBorderColor = "#FFFFFF";
+                graph.bulletBorderAlpha = 1;
+                graph.bulletBorderThickness = 2;
+                graph.lineThickness = 2;
+                graph.valueField = "value";
+                graph.balloonText = "[[category]]<br><b><span style='font-size:14px;'>[[value]]</span></b>";
+                chart.addGraph(graph);
+
+                // CURSOR
+                var chartCursor = new AmCharts.ChartCursor();
+                chartCursor.cursorAlpha = 0;
+                chartCursor.cursorPosition = "mouse";
+                chartCursor.categoryBalloonDateFormat = "YYYY";
+                chart.addChartCursor(chartCursor);
+
+                // SCROLLBAR
+                var chartScrollbar = new AmCharts.ChartScrollbar();
+                chart.addChartScrollbar(chartScrollbar);
+
+                chart.creditsPosition = "bottom-right";
+
+                // WRITE
+                chart.write("chartdiv");
+            });
+
+            // this method is called when chart is first inited as we listen for "dataUpdated" event
+            function zoomChart() {
+                // different zoom methods can be used - zoomToIndexes, zoomToDates, zoomToCategoryValues
+                chart.zoomToDates(new Date(1972, 0), new Date(1984, 0));
+            }
+        
   </script>
   </head>
  
@@ -255,7 +407,7 @@
 					The result above shows the output of correlation score from each of the scale and more appropriate recommendations are based on Correlation scale and Cosine to some extent. Jaccard Index doesn't take the actual ratings into account. It only takes the number of similar rating between to items and number of union set elements of two items. So, as an enhancement, we are trying to merge these three scores together for better system. 
 			
 			</p>
-		<iframe width="100%" height="300" src="http://threegraphs.com/charts/preview/5643/embed/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+		 <div id="chartdiv" style="width:100%; height:400px;"></div>
 			<a class="anchor" id="Accomplished"></a>
 			<br><h3><b>Accomplished:</b> </h3>
 			
@@ -293,7 +445,7 @@
 
     </div>
 
-<div id="graph"></div>
+
 
   
 
