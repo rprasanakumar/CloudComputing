@@ -4,7 +4,9 @@
 
 
 /* FONT */
-
+.dygraph-title {
+    color: blue;
+}
 @font-face {
   font-family: Neue Haas Grotesk Light;
   font-weight: 350;
