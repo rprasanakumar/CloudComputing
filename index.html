@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Cloudcomputing by rprasanakumar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Cloudcomputing</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/rprasanakumar/CloudComputing" class="btn">View on GitHub</a>
+      <a href="https://github.com/rprasanakumar/CloudComputing/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/rprasanakumar/CloudComputing/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <p>&lt;!DOCTYPE html&gt;
+</p>
+
+<pre><code>&lt;title&gt;BOOK RECOMMENDATION SYSTEM&lt;/title&gt;
+&lt;!-- Bootstrap core CSS --&gt;
+&lt;link rel="stylesheet" href="./RecommendationSystem/bootstrap.min.css"&gt;
+&lt;!-- Custom styles for this template --&gt;
+&lt;link href="./RecommendationSystem/stylesheet.css" rel="stylesheet"&gt;
+</code></pre>
+
+<p></p>
+
+<p></p>
+   
+    <div>
+      <div id="bs-example-navbar-collapse-1">
+        <ul>
+          <li>
+            <a href="#home">Home</a>
+          </li>
+          <li>
+            <a href="#team">Team</a>
+          </li>
+          <li>
+            <a href="#Approach">Approach</a>
+          </li>
+          <li>
+            <a href="#SystemImplementation">System Implementation</a>
+          </li>
+
+</ul>
+<pre><code>      &lt;li class=""&gt;
+        &lt;a href="#Dataset"&gt;Dataset&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class=""&gt;
+        &lt;a href="#Framework"&gt;Framework&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class=""&gt;
+        &lt;a href="#Illustrative"&gt;Results&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class=""&gt;
+        &lt;a href="#Performance"&gt;Performance&lt;/a&gt;
+      &lt;/li&gt;
+       &lt;li class=""&gt;
+        &lt;a href="#Accomplished"&gt;Accomplished&lt;/a&gt;
+      &lt;/li&gt;
+       &lt;li class=""&gt;
+        &lt;a href="#Roles"&gt;Roles&lt;/a&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>
+  </p>
+<div>
+      <div>
+        <div>
+          <a href="RecommendationSystem.html">
+            <img src="http://pngimg.com/upload/book_PNG2117.png">
+          </a>
+        </div>
+      </div>
+      <div>
+        <div>
+         <a id="home"></a>
+          <h3>
+<a id="book-recommendationengine" class="anchor" href="#book-recommendationengine" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Book Recommendation<br>Engine</h3>
+          <p title="Introduction">
+             In present generation of Computing revolution, recommendation systems are integral part of any intelligent information systems. e.g. Search engines (Google, Bing, Yahoo), Netflix, Amazon, YouTube and so on, recommends the article or entities which might interest users. For a system to be intelligent, it needs have informative data about user and about the entities he/she was interested in. In this project, we have developed a Book recommendation engine (stand-alone) which is used to recommend books using the User profile and User rating details. The rating system is designed with two recommendation algorithms, <a href="http://infolab.stanford.edu/~ullman/mmds/ch9.pdf">1. Collaborative filtering</a> and 2. User demographic profile (User location and age).
+          </p>
+          <p>
+            <a href="https://github.com/rprasanakumar/CloudComputing">
+              Download our code from Github
+            </a>
+          </p>
+          <a id="team"></a>
+          <h3>
+<a id="project-team" class="anchor" href="#project-team" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Project Team</h3>
+          <p>
+             <br><a href="https://www.linkedin.com/in/lakshmanan-ramu%0A">Lakshmanan Ramu Menal   </a>  <br><br><a href="https://www.linkedin.com/in/rprasanakumar">Prasanna Kumar Rajendran </a>
+            <br><br><a href="https://www.linkedin.com/in/senthilkumarkarthikeyan">Senthil Kumar Karthikeyan </a>
+          </p>
+          <a id="Approach"></a>
+          <h3>
+<a id="approach" class="anchor" href="#approach" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Approach</h3>
+          <p>
+             <b>  Collaborative based Recommendations: </b> Collaborative based recommendation engine is basically build based on the collaboration of different user’s contribution on a book. The parameter which is taken into consideration is the different user’s rating. 
+          </p>
+          <p>
+            • We have grouped all the books each user has rated, for all the users, and sorted them in descending order of the ratings. We have ignored the low rating book that the user has. 
+            <br>• Now, we get ordered pairs of interest for books each user has. So, we have dropped the user information from the pairing. 
+            <br>• Then, we calculated the similarity between every book with every other book which are rated by the same user. 
+            <br>• Finally, we combined the similarity score we calculated with for each book with other book we have calculated in the previous step. 
+            <br>• We have implemented the Collaborative based recommendation engine using Hadoop MapReduce and the programming language used was Java.</p>
+
+<pre><code>        &lt;/p&gt;
+
+
+         &lt;p class="description font-light"&gt;
+        &lt;span class="font-bold"&gt; &lt;b&gt; &lt;u&gt; Recommendations filtering based on Demographic data: &lt;/u&gt;&lt;/b&gt;&lt;/span&gt; 
+      &lt;/p&gt;
+      &lt;p class="description font-light"&gt;
+            &lt;br&gt;• We grouped all the data in such way that we can perform clustering based on location or country the user belongs to. We used the clustering algorithms for clustering the data based on the Country. 
+            &lt;br&gt;•We can even include age of the user information to cluster data. This shows the user’s recommendations which falls close to his/her country cluster. This reduced the number of data sent for processing in the second stage of engine, where the Collaborative algorithm resides. In a way improved the overall computation speed 
+            &lt;br&gt;• We have implemented this using the Hadoop MapReduce, as this going to be a one time computation, in Java. 
+
+        &lt;/p&gt;
+        &lt;a class="anchor" id="SystemImplementation"&gt;&lt;/a&gt;
+        &lt;h3 class="heading font-bold"&gt;System Implementation&lt;/h3&gt;
+
+         &lt;p class="description font-light"&gt;
+        &lt;span class="font-bold"&gt; &lt;b&gt; &lt;u&gt; Components: &lt;/u&gt;&lt;/b&gt;&lt;/span&gt; 
+        &lt;/p&gt;
+      &lt;p class="description font-light"&gt;
+            &lt;br&gt;• Data Preprocessing - Rating normalization,scaling, grouping age, book,country and the rating of the user in one file and removing nulls
+            &lt;br&gt;• Core System - Finds the Item-Item similarity in three scales &lt;br&gt;
+                        &amp;nbsp;      &amp;nbsp;&amp;nbsp;&amp;nbsp;        1. &lt;a target="_blank" href="https://en.wikipedia.org/wiki/Pearson_product-moment_correlation_coefficient"&gt;Correlation &lt;/a&gt;&lt;br&gt;
+                        &amp;nbsp;      &amp;nbsp;&amp;nbsp;&amp;nbsp;        2. &lt;a target="_blank" href="https://en.wikipedia.org/wiki/Cosine_similarity"&gt;Cosine Similarity &lt;/a&gt;&lt;br&gt;
+                        &amp;nbsp;      &amp;nbsp;&amp;nbsp;&amp;nbsp;        3. &lt;a target="_blank" href="https://en.wikipedia.org/wiki/Jaccard_index"&gt;Jaccard index &lt;/a&gt;&lt;br&gt;
+            &lt;br&gt;• Consolidating the results- The output from the Core system is country based and age based. The scores are based on every book with everyother book. For the user recomendation, we are processing the output from the core system and the user read books to recommend the books which he has not read.
+
+        &lt;/p&gt;
+        &lt;p class="description font-light"&gt;
+        &lt;span class="font-bold"&gt; &lt;b&gt; &lt;u&gt; System Architecture: &lt;/u&gt;&lt;/b&gt;&lt;/span&gt; 
+        &lt;/p&gt;
+
+
+
+
+
+
+
+
+
+        &lt;div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&amp;quot;highlight&amp;quot;:&amp;quot;#0000ff&amp;quot;,&amp;quot;nav&amp;quot;:true,&amp;quot;resize&amp;quot;:true,&amp;quot;xml&amp;quot;:&amp;quot;&amp;lt;mxfile userAgent=\&amp;quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36\&amp;quot; version=\&amp;quot;6.0.1.9\&amp;quot; editor=\&amp;quot;www.draw.io\&amp;quot; type=\&amp;quot;google\&amp;quot;&amp;gt;&amp;lt;diagram name=\&amp;quot;Page-1\&amp;quot;&amp;gt;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&amp;lt;/diagram&amp;gt;&amp;lt;/mxfile&amp;gt;&amp;quot;,&amp;quot;toolbar&amp;quot;:&amp;quot;pages zoom layers lightbox&amp;quot;,&amp;quot;page&amp;quot;:0}"&gt;&lt;/div&gt;
+</code></pre>
+
+
+            
+
+<pre><code>        &lt;a class="anchor" id="Motivation"&gt;&lt;/a&gt;
+
+        &lt;h3 class="heading font-bold"&gt;Motivation:&lt;/h3&gt;
+
+            &lt;span class="font-bold"&gt; We tried to check how this recommendation engine works in the real-world scenario by giving one of our teammate’s information as a new user profile detail in the dataset and also his ratings to the books which he has already read from the dataset. Interestingly, recommendation engine suggested some books which was aligned to his interest based on the rating details which he provided. This was very useful and interesting about our project. 
+      &lt;/p&gt;
+      &lt;a class="anchor" id="Dataset"&gt;&lt;/a&gt;
+
+        &lt;h3 class="heading font-bold"&gt;Dataset:&lt;/h3&gt;
+
+         &lt;p&gt;   &lt;span class="font-bold"&gt; We are using the Book-Crossing Dataset which was mined by Cai-Nicolas Ziegler, DBIS Freiburg, from the Book-Crossing Community. This dataset contains 278,858 users (anonymized but with demographic information) providing 1,149,780 ratings (explicit / implicit) about 271,379 books. This dataset is freely available for research purpose from &lt;a href="http://www2.informatik.uni-freiburg.de/~cziegler/BX/." target="_blank"&gt; here &lt;/a&gt;
+      &lt;/p&gt;
+
+        &lt;p&gt;
+            &lt;b&gt;&lt;u&gt;Data Description:&lt;/u&gt;&lt;/b&gt;
+        The Book-Crossing dataset comprises 3 tables in comma-separated values (CSV) files.  
+        &lt;br&gt;• &lt;a href="http://www2.informatik.uni-freiburg.de/~cziegler/BX/BX-CSV-Dump.zip" target="_blank"&gt;BX-Users &lt;/a&gt;
+        Contains the users. Note that user IDs (‘User-ID’) have been anonymized and map to integers. Demographic data is provided (‘Location’, ‘Age’) if available. Otherwise, these fields contain NULL-values.
+        &lt;br&gt;• &lt;a href="http://www2.informatik.uni-freiburg.de/~cziegler/BX/BX-CSV-Dump.zip" target="_blank"&gt;BX-Books&lt;/a&gt;
+        Books are identified by their respective ISBN. Invalid ISBNs have already been removed from the dataset. Moreover, some content-based information is given (‘Book-Title’, ‘Book-Author’, ‘Year-Of-Publication’, ‘Publisher’), obtained from Amazon Web Services. Note that in case of several authors, only the first is provided. URLs linking to cover images are also given, appearing in three different flavors (‘Image-URL-S’, ‘Image-URL-M’, ‘Image-URL-L’), i.e., small, medium, large. These URLs point to the Amazon web site. 
+        &lt;br&gt;• &lt;a href="http://www2.informatik.uni-freiburg.de/~cziegler/BX/BX-CSV-Dump.zip" target="_blank"&gt;BX-Book-Ratings&lt;/a&gt;
+        Contains the book rating information. Ratings (‘Book-Rating’) are either explicit, expressed on a scale from 1-10 (higher values denoting higher appreciation), or implicit, expressed by 0.
+</code></pre>
+
+<p></p>
+<a id="Framework"></a>
+            <h3>
+<a id="framework" class="anchor" href="#framework" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Framework:</h3>
+            <p> 
+                The entire Recommendation Engine in this project was built in Hadoop MapReduce framework using Java.
+                Environments:
+                For development, we used Cloudera.
+                For testing, we used UNCC Hadoop DSBA cluster.
+                For implementation and demo, we used Amazon AWS Cluster.</p>
+
+<pre><code>        &lt;/p&gt;
+        &lt;a class="anchor" id="Illustrative"&gt;&lt;/a&gt;
+        &lt;h3 class="heading font-bold"&gt;Illustrative results and Examples:&lt;/h3&gt;
+        &lt;br&gt;&lt;h4&gt;&lt;b&gt;Data Preprocessing&lt;u&gt;&lt;/u&gt;&lt;/b&gt;&lt;/h4&gt;
+        &lt;br&gt;&lt;h5&gt;&lt;b&gt;&lt;u&gt;File1- After Preprocessing&lt;/u&gt;&lt;/b&gt;&lt;/h5&gt;
+        &lt;p&gt; &lt;b&gt;
+            "100027"&amp;&amp;&amp;&amp;&amp;   &amp;&amp;&amp;&amp;&amp;"0448425831"######-7\s&amp;&amp;&amp;&amp;&amp;canada"~~~~~unknown
+            "100028"&amp;&amp;&amp;&amp;&amp;   &amp;&amp;&amp;&amp;&amp;"185967318X"######3\s&amp;&amp;&amp;&amp;&amp;jersey,"~~~~~unknown
+            "100029"&amp;&amp;&amp;&amp;&amp;   &amp;&amp;&amp;&amp;&amp;"0140219854"######3\s"3498020862"######-5\s"0446523747"######-7\s"0312983263"######-7\s"0312954468"######-7\s&amp;&amp;&amp;&amp;&amp;germany"~~~~~unknown
+            "10003"&amp;&amp;&amp;&amp;&amp;    &amp;&amp;&amp;&amp;&amp;"068483068X"######3\s"0743446593"######3\s&amp;&amp;&amp;&amp;&amp;usa"~~~~~"20"
+            "100030"&amp;&amp;&amp;&amp;&amp;   &amp;&amp;&amp;&amp;&amp;"0744552192"######-7\s"0679735909"######-7\s&amp;&amp;&amp;&amp;&amp;usa"~~~~~"15"&lt;/b&gt;
+
+        &lt;/p&gt;
+        &lt;br&gt;&lt;h4&gt;&lt;b&gt;Core System&lt;u&gt;&lt;/u&gt;&lt;/b&gt;&lt;/h4&gt;
+        &lt;br&gt;&lt;h5&gt;&lt;b&gt;&lt;u&gt;File2- After Core system from Correlation based on Country&lt;/u&gt;&lt;/b&gt;&lt;/h5&gt;
+        &lt;p&gt; &lt;b&gt;
+            australia","0006476007" "0330243829" 1.0,"0749309423" 1.0,"0733613675" 1.0,"0140031499" 1.0,"0749316063" 1.0,"0552103721" 1.0,"0552125695" 1.0,"0099245027" 1.0,
+            australia","0061030015" "0345466810" 1.0,"0446608815" 0.8,"0312421184" 0.7,"0224018256" 0.0,"1585672939" 0.0,"0099771519" -0.7,
+            australia","0142003581" "0060930535" 1.0,"0061015725" 0.7,"0224018256" -0.7,"0385319452" -1.0,"0786868716" -1.0,"0767903862" -1.0,"0671024248" -1.0,
+            australia","0312924801" "0446610801" 1.0,"0553258877" 1.0,"0553280341" 1.0,"0886777712" 0.6,
+            australia","0340613696" "000649983X" 1.0,"0450411435" 1.0,"0007140676" 1.0,"0099281082" 1.0,"0449007251" -0.9,"0860074382" -1.0,"0099312514" -1.0,
+            australia","0385720106" "0060934417" 1.0,"033031582" -0.7,
+            australia","0399131493" "014043223X" -1.0,
+            australia","0452285011" "0330361163" 1.0,"0140289690" 1.0,"061328125X" 1.0,"0452282152" 1.0,"1565122178" 1.0,"0790008696" 1.0,"0571206484" 0.9,"0091882087" -1.0,
+            australia","0575049804" "0887307876" -1.0,"0330349678" -1.0,"067976402X" -1.0,"0971880107" -1.0,&lt;/b&gt;
+
+        &lt;/p&gt;
+
+        &lt;br&gt;&lt;h5&gt;&lt;b&gt;&lt;u&gt;File2- After Core system from  correlation based on Age&lt;/u&gt;&lt;/b&gt;&lt;/h5&gt;
+        &lt;p&gt; &lt;b&gt;
+            15","0440413141"    "014131088X" 1.0,
+            "16","0312990456"   "0590962736" 1.0,
+            "18","0553264613"   "0515126772" 1.0,"0446310786" 1.0,"0380776839" 1.0,"0452281458" 1.0,
+            "18","0671870114"   "0671737821" 1.0,"0671871005" 1.0,"0671744216" 1.0,"0671776800" 0.9,
+            "18","0671871005"   "0515120006" 1.0,"0671737821" 1.0,"0671870114" 1.0,"0671737791" 1.0,"0671776800" 0.9,"0671744216" 0.9,
+            "18","0684856093"   "0312195516" 1.0,"0441005993" 1.0,"0064400581" 1.0,"084233226X" 0.7,"0061057894" -1.0,"0842329250" -1.0,"0842329277" -1.0,"0553274295" -1.0,"0842329269" -1.0,
+            "19","0345413350"   "044651652X" 1.0,
+            "20","0671534734"   "0689813953" 1.0,"0679781587" 1.0,
+            "20","1558746161"   "1558747613" 1.0,
+            "21","0060930535"   "0684801523" 0.8,"0804114986" -1.0,"0316777730" -1.0,
+            "21","0375826688"   "0971880107" 1.0,"1840720050" 0.0,
+            "21","0380789019"   "0679781587" 1.0,
+            "21","0399149325"   "0060931418" -1.0,"0451526341" -1.0,
+            "22","0099771519"   "0385504209" 1.0,&lt;/b&gt;
+
+        &lt;/p&gt;
+
+
+        &lt;br&gt;&lt;h4&gt;&lt;b&gt;Consolidating Result&lt;/b&gt;&lt;/h4&gt;
+        &lt;br&gt;&lt;h5&gt;&lt;b&gt;&lt;u&gt;File2- After Core system from Correlation&lt;/u&gt;&lt;/b&gt;&lt;/h5&gt;
+        &lt;p&gt; &lt;b&gt;
+            "101026"    "0393050939",1.0,"0449908100",1.0,"0684800713",1.0,"006105111X",1.0,"042518000X",1.0,"0316037451",1.0,"0449221393",1.0,"037542217X",1.0,"0749397543",1.0,"0763604089",1.0,"0486295699",1.0,"067982412X",1.0,"0440221919",1.0,"0373250126",1.0,"0679804196",1.0,"0836220676",1.0,"0441644511",1.0,"037322592X",1.0,"0446606456",1.0,"0553573314",1.0,"068812701",1.0,"0061020400",1.0,"0385319207",1.0,"1551669358",1.0,"0451410610",1.0,
+            "10124" "0060254920",1.0,"0060191929",1.0,"0375412409",1.0,"0451402502",1.0,"1573229725",1.0,"0060977744",1.0,"034530358X",1.0,"037325024X",1.0,"0688105548",1.0,"0525945938",1.0,"0764225081",1.0,"0441644511",1.0,"0380707837",1.0,"0140386742",1.0,"0440224764",1.0,"0345462351",1.0,"0425151867",1.0,"0886779758",1.0,"1551669358",1.0,"0451526279",1.0,"0515124060",1.0,"0553801430",1.0,"0060977701",1.0,"0743255453",1.0,"1551669005",1.0,"0446605980",1.0,"0764227173",1.0,"0440208459",1.0,"0312288662",1.0,"0446609943",1.0,"&lt;/b&gt;
+
+        &lt;/p&gt;
+
+        &lt;a class="anchor" id="Performance"&gt;&lt;/a&gt;
+        &lt;br&gt;&lt;h3&gt;&lt;b&gt;Performance Evaluation:&lt;/b&gt; &lt;/h3&gt;
+
+            &lt;p&gt; 
+                The result above shows the output of correlation score from each of the scale and more appropriate recommendations are based on Correlation scale and Cosine to some extent. Jaccard Index doesn't take the actual ratings into account. It only takes the number of similar rating between to items and number of union set elements of two items. So, as an enhancement, we are trying to merge these three scores together for better system. 
+
+        &lt;/p&gt;
+        &lt;a class="anchor" id="Accomplished"&gt;&lt;/a&gt;
+        &lt;br&gt;&lt;h3&gt;&lt;b&gt;Accomplished:&lt;/b&gt; &lt;/h3&gt;
+
+            &lt;p&gt; 
+                &lt;br&gt;• Definitely will accomplish: As we proposed, we have successfully implemented the Book Recommendation Engine using the Collaborative + Demographic recommendation model from the scratch.
+</code></pre>
+
+<p><br>• Likely to accomplish: As we mentioned, we also tried to implement the recommendation engine using content-based recommendation engine but to time constraints we were not able to design it completely.
+<br>• Would ideally like to accomplish (in future):  A responsive UI for the system and showing the recommendation in a webpage and storing any new user data in the database for adding him to the existing dataset we have and include his data for further analysis and recommendation computation.   </p>
+
+<pre><code>        &lt;/p&gt;
+        &lt;a class="anchor" id="Roles"&gt;&lt;/a&gt;
+
+                &lt;br&gt;&lt;h4&gt;&lt;b&gt;Roles and Responsibilities:&lt;/b&gt; &lt;/h4&gt;
+
+            &lt;p&gt; 
+                This project basically had Environment setup (Hadoop, SPRAK, DATA set up), Design, Coding, Testing, Documentation and setting up meetings on regular basis for project status update.
+</code></pre>
+
+<p><br><br><b><h4>
+<a id="specific-task-assignments-" class="anchor" href="#specific-task-assignments-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Specific Task assignments: </h4></b>
+<br><b>1. Lakshmanan Ramu Meenal</b><br>
+                    a. Environment Setup<br>
+                    b. Coding
+<br><b>2. Prasanna Kumar Rajendran</b><br>
+          a. Setting up meetings on regular basis
+          b. Design
+          c. Coding
+<br><b>3. Senthil Kumar Karthikeyan</b><br>
+          a. Documentation
+              b. Coding</p>
+
+<pre><code>        &lt;/p&gt;
+
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;/div&gt;
+</code></pre>
+
+<p></p>
+
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</div> 
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/rprasanakumar/CloudComputing">Cloudcomputing</a> is maintained by <a href="https://github.com/rprasanakumar">rprasanakumar</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
