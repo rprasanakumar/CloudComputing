@@ -228,7 +228,7 @@
 					The result above shows the output of correlation score from each of the scale and more appropriate recommendations are based on Correlation scale and Cosine to some extent. Jaccard Index doesn't take the actual ratings into account. It only takes the number of similar rating between to items and number of union set elements of two items. So, as an enhancement, we are trying to merge these three scores together for better system. 
 			
 			</p>
-			<iframe src="http://threegraphs.com/charts/preview/5643/embed/" width="500" height="500" scrolling="no" frameborder="0" style="border:none;"></iframe>
+			<div id="graph"></div>
 			<a class="anchor" id="Accomplished"></a>
 			<br><h3><b>Accomplished:</b> </h3>
 			
@@ -269,6 +269,30 @@
 
   <script>
     $('body').scrollspy({ target: '#site-navbar' })
+	  g = new Dygraph(document.getElementById("graph"),
+                 // For possible data formats, see http://dygraphs.com/data.html
+                 // The x-values could also be dates, e.g. "2012/03/15"
+                 "Book,Jaccard,cosine,correlation\n" +
+                "743456335,	0.3,	0.4,	0.7\n"+
+"515128546,	-0.6,	-0.2,	0.4\n"+
+"385314388,	0.7,	0.9,	0.9\n"+
+"380792028,	0.6,	0.9,	0.9\n"+
+"312995423,	0.4,	1,	1\n"+
+"380762595,	1,	1,	1\n"+
+"553569910,	1,	1,	1\n"+
+"684818868,	0.6,	1,	1\n"+
+"006098824X,	0.3,	1,	1\n"+
+"044023722X,	-0.5,	1,	1\n"+
+"439136350,	-0.3,	0.5,	0.6\n"+
+"006098824X,	-0.2,	0.4,	0.9\n"+
+"385479565,	0.2,0.7,	0.9\n",
+
+                 {
+                     // options go here. See http://dygraphs.com/options.html
+                     legend: 'always',
+                     animatedZooms: true,
+                     title: 'dygraphs chart template'
+                 });
   </script>
   
 
