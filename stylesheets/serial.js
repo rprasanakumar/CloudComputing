@@ -93,3 +93,39 @@ dateToCoordinate:function(a){return this.parseDates&&!this.equalSpacing?(a.getTi
 this.categoryToCoordinate(a));return this.adjustBalloonCoordinate(b)},formatBalloonText:function(a,b,c){var d="",g="",h=this.chart,e=this.data[b];if(e)if(this.parseDates)d=f.formatDate(e.category,c,h),b=f.changeDate(new Date(e.category),this.minPeriod,1),g=f.formatDate(b,c,h),-1!=d.indexOf("fff")&&(d=f.formatMilliseconds(d,e.category),g=f.formatMilliseconds(g,b));else{var l;this.data[b+1]&&(l=this.data[b+1]);d=f.fixNewLines(e.category);l&&(g=f.fixNewLines(l.category))}a=a.replace(/\[\[category\]\]/g,
 String(d));return a=a.replace(/\[\[toCategory\]\]/g,String(g))},adjustBalloonCoordinate:function(a,b){var c=this.xToIndex(a),d=this.chart.chartCursor;if(this.stickBalloonToCategory){var f=this.data[c];f&&(a=f.x[this.id]);this.stickBalloonToStart&&(a-=this.cellWidth/2);var h=0;if(d){var e=d.limitToGraph;if(e){var l=e.valueAxis.id;e.hidden||(h=f.axes[l].graphs[e.id].y)}this.rotate?("left"==this.position?(e&&(h-=d.width),0<h&&(h=0)):0>h&&(h=0),d.fixHLine(a,h)):("top"==this.position?(e&&(h-=d.height),
 0<h&&(h=0)):0>h&&(h=0),d.fixVLine(a,h))}}d&&!b&&(d.setIndex(c),this.parseDates&&d.setTimestamp(this.coordinateToDate(a).getTime()));return a}})})();
+
+$(function () {
+    Highcharts.chart('container', {
+        title: {
+            text: 'Mapreduce Jobs vs Modules',
+            x: -20 //center
+        },
+        
+        xAxis: {
+            categories: ['Data Preprocessing','Country Based Correlation','Country Based Cosine','Country Based Jaccard Index','Age Based Correlation','Age Based Cosine','Age Based Jaccard Index','Country-Age Based Correlation','Country-Age Based Cosine','Country-Age Based Jaccard Index','User recommendations']
+        },
+        yAxis: {
+            title: {
+                text: 'Job Count'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: '#'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+        
+            data: [6,3,3,3,3,3,3,3,3,3,2]
+        }]
+    });
+});
